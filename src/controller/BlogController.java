@@ -47,8 +47,11 @@ public class BlogController extends HttpServlet {
 		blog.setBlogTitle(title);
 		blog.setBlogDescription(description);
 		blog.setDate(postedOn);
+		
+		CheckBlogPost post=new CheckBlogPost();
+		   boolean checkblog=ec.CheckBlogPost(user);
 
-		if(checkblog!) {
+		if(checkblog!=null) {
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
